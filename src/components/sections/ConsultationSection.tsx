@@ -11,7 +11,7 @@ export const ConsultationSection = () => {
           <div className="flex-1 space-y-6 text-center md:text-left">
             {/* Logo */}
             <img
-              src="../../public/assets/logos/forgewell.png" // replace with your logo path
+              src="../../assets/logos/forgewell.png" // replace with your logo path
               alt="ForgeWell Labs"
               className="h-16 mx-auto md:mx-0"
             />
