@@ -10,10 +10,9 @@ export const Services = () => {
       {" "}
       <Container className="space-y-10 md:space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Title> Our AI Services</Title>
+          <Title> Our Medical Services</Title>
           <Paragraph>
-            Unlock the potential of advanced machine learning, natural language
-            processing, and predictive analytics. Our services include:
+            Science-Backed, Doctor-Guided Weight Loss Reimagined.
           </Paragraph>
         </div>
 
@@ -21,7 +20,8 @@ export const Services = () => {
           {services.map((service, key) => (
             <Service
               key={key}
-              title={service.title}
+              step={`Step ${key + 1}`}
+              headline={service.title}        // the main headline
               description={service.description}
               icon={service.icon}
             />

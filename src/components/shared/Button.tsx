@@ -1,13 +1,12 @@
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: React.ReactNode;
-  onClick?: () => void;
 }
 
-export const Button = ({ onClick, children, className = "" }: ButtonProps) => {
+export const Button = ({ children, className = "", ...props }: ButtonProps) => {
   return (
     <button
-      onClick={onClick}
+      {...props} // this spreads all native button props, including type="submit"
       className={`px-6 py-3 rounded-full outline-none cursor-pointer
                  relative overflow-hidden border border-transparent bg-violet-600 ${className}`}
     >
