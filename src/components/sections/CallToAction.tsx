@@ -23,7 +23,7 @@ export const CTA = () => {
           {/* Right: Image */}
           <div className="flex-1">
             <img
-              src="../../public/assets/contact_us.jpeg" // replace with your image path
+              src="../../assets/contact_us.jpeg" // replace with your image path
               alt="Consultation illustration"
               className="w-full h-auto rounded-3xl shadow-lg object-cover"
             />

@@ -6,35 +6,40 @@ type Theme = "light" | "dark";
 interface ThemeStore {
   theme: Theme;
   toggleTheme: () => void;
+  setTheme: (theme: Theme) => void;
 }
 
 export const useThemeStore = create<ThemeStore>()(
   persist(
     (set, get) => ({
-      theme:
-        typeof window !== "undefined" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light",
+      // default theme is always light
+      theme: "light",
+
       toggleTheme: () => {
         const newTheme: Theme = get().theme === "light" ? "dark" : "light";
         if (typeof document !== "undefined") {
-          document.documentElement.classList.toggle(
-            "dark",
-            newTheme === "dark"
-          );
+          document.documentElement.classList.toggle("dark", newTheme === "dark");
         }
-
         set({ theme: newTheme });
+      },
+
+      setTheme: (theme: Theme) => {
+        if (typeof document !== "undefined") {
+          document.documentElement.classList.toggle("dark", theme === "dark");
+        }
+        set({ theme });
       },
     }),
     {
       name: "theme",
+
+      // on rehydrate, force light mode by default for everyone
       onRehydrateStorage: () => (state) => {
-        if (state?.theme === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
+        if (typeof document !== "undefined") {
+              // force light mode
           document.documentElement.classList.remove("dark");
+          // reset persisted theme to "light"
+          state && (state.theme = "light");
         }
       },
     }
