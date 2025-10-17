@@ -1,7 +1,7 @@
 import { pricingPlans } from "../../utils/pricing-plan";
-import { Button } from "../shared/Button";
+// import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
-import { Paragraph } from "../shared/Paragraph";
+// import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
 
 export const Pricing = () => {

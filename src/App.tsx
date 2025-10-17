@@ -1,6 +1,6 @@
 import { Layout } from "./components/Layout";
 import { AboutUs } from "./components/sections/AboutUs";
-import { Brands } from "./components/sections/Brands";
+// import { Brands } from "./components/sections/Brands";
 import { BookConsultation } from "./components/sections/consulation";
 import { CTA } from "./components/sections/CallToAction";
 import { Hero } from "./components/sections/Hero";
