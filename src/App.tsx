@@ -8,6 +8,7 @@ import { Pricing } from "./components/sections/Pricing";
 import { Services } from "./components/sections/Services";
 // import { ConsultationForm } from "./components/sections/ConsultationForm";
 import { ConsultationSection } from "./components/sections/ConsultationSection";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <AboutUs />
       <Pricing />
       <CTA />
+      <Toaster position="top-right" reverseOrder={false} />
       <ConsultationSection />
     </Layout>
   );
