@@ -14,9 +14,9 @@ export const ConsultationForm = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    const serviceId = "service_xmdx9sg";
-    const templateId = "template_1g2oi9g";
-    const publicKey = "tcTVK8NOohqYUjEsl";
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     // Send email using EmailJS
     emailjs
