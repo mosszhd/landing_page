@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import { Button } from "../shared/Button";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 interface FormData {
   fullName: string;
